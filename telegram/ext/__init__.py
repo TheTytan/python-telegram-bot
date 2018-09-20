@@ -18,14 +18,16 @@
 # along with this program.  If not, see [http://www.gnu.org/licenses/].
 """Extensions over the Telegram Bot API to facilitate bot making"""
 
-from .handler import Handler
-from .callbackcontext import CallbackContext
+from .basepersistence import BasePersistence
+from .picklepersistence import PicklePersistence
+from .dictpersistence import DictPersistence
 from .dispatcher import Dispatcher, DispatcherHandlerStop, run_async
 from .jobqueue import JobQueue, Job
 from .updater import Updater
 from .callbackqueryhandler import CallbackQueryHandler
 from .choseninlineresulthandler import ChosenInlineResultHandler
-from .commandhandler import CommandHandler, PrefixHandler
+from .commandhandler import CommandHandler
+from .handler import Handler
 from .inlinequeryhandler import InlineQueryHandler
 from .messagehandler import MessageHandler
 from .filters import BaseFilter, Filters
@@ -44,4 +46,5 @@ __all__ = ('Dispatcher', 'JobQueue', 'Job', 'Updater', 'CallbackQueryHandler',
            'MessageHandler', 'BaseFilter', 'Filters', 'RegexHandler', 'StringCommandHandler',
            'StringRegexHandler', 'TypeHandler', 'ConversationHandler',
            'PreCheckoutQueryHandler', 'ShippingQueryHandler', 'MessageQueue', 'DelayQueue',
-           'DispatcherHandlerStop', 'run_async', 'CallbackContext', 'PrefixHandler')
+           'DispatcherHandlerStop', 'run_async', 'BasePersistence', 'PicklePersistence',
+           'DictPersistence')
